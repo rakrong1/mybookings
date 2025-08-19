@@ -13,15 +13,15 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg",
         outline:
-          "border border-input glass-card hover:bg-accent/50 hover:text-accent-foreground smooth-transition",
+          "glass-button text-foreground hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground smooth-transition",
+          "bg-secondary/80 backdrop-blur-md text-secondary-foreground hover:bg-secondary/60 border border-white/10 smooth-transition",
+        ghost: "hover:bg-white/10 hover:text-accent-foreground backdrop-blur-sm smooth-transition",
         link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-success text-success-foreground hover:bg-success/90 shadow-lg",
-        warning: "bg-warning text-warning-foreground hover:bg-warning/90 shadow-lg",
-        glass: "glass-card hover:bg-accent/50 border border-border/50 smooth-transition",
-        premium: "premium-gradient text-primary-foreground hover:opacity-90 shadow-[0_0_30px_rgba(59,130,246,0.4)] transform hover:scale-105 bounce-transition"
+        success: "bg-success/80 backdrop-blur-md text-success-foreground hover:bg-success/60 shadow-lg border border-white/10",
+        warning: "bg-warning/80 backdrop-blur-md text-warning-foreground hover:bg-warning/60 shadow-lg border border-white/10",
+        glass: "glass-button text-foreground",
+        premium: "premium-gradient text-primary-foreground hover:opacity-90 shadow-[0_0_30px_rgba(59,130,246,0.4)] transform hover:scale-105 bounce-transition glass-button"
       },
       size: {
         default: "h-10 px-4 py-2",
