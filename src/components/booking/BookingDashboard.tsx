@@ -19,7 +19,7 @@ export const BookingDashboard = () => {
   const [showCreateDialog, setShowCreateDialog] = useState(false);
 
   return (
-    <div className="min-h-screen p-6 space-y-6">
+    <div className="min-h-screen p-6 space-y-6 animate-fade-in">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
