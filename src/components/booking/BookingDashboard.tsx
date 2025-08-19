@@ -19,7 +19,7 @@ export const BookingDashboard = () => {
   const [showCreateDialog, setShowCreateDialog] = useState(false);
 
   return (
-    <div className="min-h-screen p-6 space-y-6">
+    <div className="min-h-screen p-6 space-y-6 animate-fade-in">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -47,7 +47,7 @@ export const BookingDashboard = () => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        <Card className="glass-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Bookings</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" />
@@ -58,7 +58,7 @@ export const BookingDashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="glass-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pending</CardTitle>
             <Clock className="h-4 w-4 text-warning" />
@@ -69,7 +69,7 @@ export const BookingDashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="glass-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Confirmed</CardTitle>
             <CheckCircle className="h-4 w-4 text-success" />
@@ -80,7 +80,7 @@ export const BookingDashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="glass-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Completed</CardTitle>
             <Users className="h-4 w-4 text-primary" />
@@ -91,7 +91,7 @@ export const BookingDashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="glass-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Cancelled</CardTitle>
             <AlertCircle className="h-4 w-4 text-destructive" />
@@ -110,7 +110,7 @@ export const BookingDashboard = () => {
         </div>
         
         <div className="space-y-6">
-          <Card className="glass-card">
+          <Card>
             <CardHeader>
               <CardTitle>Quick Actions</CardTitle>
             </CardHeader>
