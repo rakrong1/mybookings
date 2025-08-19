@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# MyBookings
 
-## Project info
+A minimal booking application for solo service providers, built with [your tech stack—e.g., NestJS, React, Tailwind CSS, PostgreSQL, Redis, WebSocket].
 
-**URL**: https://lovable.dev/projects/9c634b3c-25aa-4b02-8ce4-fbb8c205cfea
+---
 
-## How can I edit this code?
+## Assumptions & Decisions
 
-There are several ways of editing your application.
+- **Solo-provider scoped**: Only one provider per deployment; simplifies multi-tenancy.
+- **Booking duration fixed per service**: No custom lengths to keep scheduling simple.
+- **Unique time slot constraint**: Enforced at the DB level for `pending` or `confirmed` statuses.
+- **15-minute advance booking**: Ensures realistic booking windows and avoids immediate-scheduling issues.
+- **REST + WebSocket API**: Chosen for simplicity and real-time updates.
+- **PostgreSQL for persistence**, **Redis for job queuing** and **WebSocket pub/sub**, balancing consistency & responsiveness.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9c634b3c-25aa-4b02-8ce4-fbb8c205cfea) and start prompting.
+## Setup Instructions
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/rakrong1/mybookings.git
+   cd mybookings
 
-**Use your preferred IDE**
+# If using npm
+npm install
+# Or using Yarn:
+yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+DATABASE_URL=postgres://user:pass@localhost:5432/mybookings
+REDIS_URL=redis://localhost:6379
+JWT_SECRET=your_secret_here
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# How to Run Locally & Test
 npm run dev
-```
+npm test
 
-**Edit a file directly in GitHub**
+# What You’d Improve with +4 Hours
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# If I had an additional 4 hours, I’d enhance the application by:
 
-**Use GitHub Codespaces**
+# Adding robust test coverage for REST endpoints, edge cases, and integration with WebSocket and Redis.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Implementing better CI/CD: auto-deploy, integration tests, and linting checks.
 
-## What technologies are used for this project?
+# Improving observability: structured logs, error tracking, and metrics (e.g., queue length, request latency).
 
-This project is built with:
+# Enhancing UX: add frontend forms with real-time validation and booking status updates.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9c634b3c-25aa-4b02-8ce4-fbb8c205cfea) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Support for cancellations/confirmation emails and retry logic in job worker pipelines.
